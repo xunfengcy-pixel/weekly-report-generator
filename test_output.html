@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合诉讼维权中心周报 | 03.16-03.22</title>
+    <style>
+        /* 邮件兼容版 - 使用固定值替代CSS变量 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: #f5f5f5;
+            color: #262626;
+            line-height: 1.6;
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 容器 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        /* 头部区域 */
+        .header {
+            background: #2563eb;
+            border-radius: 16px;
+            padding: 32px 24px;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .header-date {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 400;
+        }
+
+        /* 数据卡片区域 - 使用table布局确保兼容性 */
+        .metrics-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 16px;
+            margin-bottom: 16px;
+        }
+
+        .metric-cell {
+            width: 25%;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+        }
+
+        .metric-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: #737373;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: 600;
+            color: #171717;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .metric-desc {
+            font-size: 12px;
+            color: #a3a3a3;
+        }
+
+        /* 章节区域 */
+        .section {
+            background: #ffffff;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+            border: 1px solid #e5e5e5;
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 20px 24px;
+            background: #eff6ff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .section-number {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: #2563eb;
+            color: white;
+            border-radius: 6px;
+            text-align: center;
+            line-height: 36px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #171717;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .section-body {
+            padding: 20px 24px;
+        }
+
+        /* 数据概览区域 */
+        .data-overview {
+            background: #fafafa;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .overview-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8px;
+        }
+
+        .overview-cell {
+            width: 33.33%;
+            text-align: center;
+            padding: 8px 4px;
+            background: #ffffff;
+            border-radius: 6px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .overview-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2563eb;
+            line-height: 1;
+        }
+
+        .overview-label {
+            font-size: 10px;
+            color: #737373;
+            margin-top: 4px;
+        }
+
+        /* 细分分布 */
+        .breakdown-box {
+            margin-top: 8px;
+            padding: 8px;
+            background: #ffffff;
+            border-radius: 6px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .breakdown-header {
+            font-size: 10px;
+            color: #a3a3a3;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .breakdown-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8px;
+        }
+
+        .breakdown-cell {
+            width: 25%;
+            text-align: center;
+            padding: 8px 4px;
+            background: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .breakdown-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #404040;
+            line-height: 1;
+        }
+
+        .breakdown-label {
+            font-size: 10px;
+            color: #737373;
+            margin-top: 2px;
+        }
+
+        /* 竞业限制样式 */
+        .nc-secondary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8px;
+            margin-top: 8px;
+        }
+
+        .nc-secondary-cell {
+            width: 33.33%;
+            text-align: center;
+            padding: 4px;
+            background: transparent;
+            border-radius: 6px;
+            border: 1px dashed #d4d4d4;
+        }
+
+        .nc-secondary-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #737373;
+            line-height: 1;
+        }
+
+        .nc-secondary-label {
+            font-size: 10px;
+            color: #a3a3a3;
+            margin-top: 2px;
+        }
+
+        /* BG分布双栏布局 */
+        .bg-dist-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 12px;
+            margin-top: 8px;
+        }
+
+        .bg-dist-cell {
+            width: 50%;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            padding: 8px;
+            vertical-align: top;
+        }
+
+        .bg-dist-header {
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px dashed #e5e5e5;
+        }
+
+        .bg-dist-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #525252;
+        }
+
+        .bg-dist-total {
+            font-size: 11px;
+            font-weight: 700;
+            color: #2563eb;
+            float: right;
+        }
+
+        .bg-grid-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 4px;
+        }
+
+        .bg-grid-cell {
+            width: 50%;
+            padding: 4px 8px;
+            background: #fafafa;
+            border-radius: 6px;
+            font-size: 11px;
+        }
+
+        .bg-grid-name {
+            color: #737373;
+        }
+
+        .bg-grid-value {
+            font-weight: 700;
+            color: #262626;
+            float: right;
+        }
+
+        /* 摘要文本 */
+        .summary-text {
+            font-size: 13px;
+            color: #525252;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .summary-text p {
+            margin-bottom: 12px;
+        }
+
+        .summary-text a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        /* 案件卡片 */
+        .case-list {
+            margin-top: 24px;
+        }
+
+        .case-card {
+            background: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #e5e5e5;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .case-header {
+            padding: 16px 20px;
+            background: #eff6ff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .case-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #262626;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .case-badges {
+            display: inline-block;
+            float: right;
+            vertical-align: middle;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .badge-primary {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        .badge-status {
+            background: #2563eb;
+            color: white;
+        }
+
+        .avatar {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .case-body {
+            padding: 16px 20px;
+        }
+
+        .case-section {
+            margin-bottom: 16px;
+        }
+
+        .case-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-section-title {
+            font-size: 10px;
+            font-weight: 600;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .case-section-content {
+            font-size: 13px;
+            color: #525252;
+            line-height: 1.8;
+        }
+
+        /* 文档链接 */
+        .doc-links {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .doc-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 13px;
+            margin-right: 12px;
+            margin-bottom: 8px;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+            border: 1px solid #e5e5e5;
+        }
+
+        .footer-author {
+            margin-bottom: 16px;
+        }
+
+        .footer-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 4px;
+        }
+
+        .footer-title {
+            font-size: 13px;
+            color: #737373;
+        }
+
+        .footer-notice {
+            padding: 16px;
+            background: #eff6ff;
+            border-radius: 6px;
+            border-left: 3px solid #2563eb;
+            font-size: 12px;
+            color: #525252;
+            line-height: 1.6;
+        }
+
+        .footer-notice strong {
+            color: #2563eb;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="header-title">综合诉讼维权中心周报</h1>
+            <div class="header-date">2026年03月16日 – 03月22日</div>
+        </div>
+
+        <!-- Metrics -->
+        <table class="metrics-table">
+            <tr>
+                <td class="metric-cell">
+                    <div class="metric-label">在办案件</div>
+                    <div class="metric-value">124</div>
+                    <div class="metric-desc">持续推进</div>
+                </td>
+                <td class="metric-cell">
+                    <div class="metric-label">新增案件</div>
+                    <div class="metric-value">1</div>
+                    <div class="metric-desc">本周新增</div>
+                </td>
+                <td class="metric-cell">
+                    <div class="metric-label">结案数量</div>
+                    <div class="metric-value">0</div>
+                    <div class="metric-desc">无新结案</div>
+                </td>
+                <td class="metric-cell">
+                    <div class="metric-label">涉外纠纷</div>
+                    <div class="metric-value">5</div>
+                    <div class="metric-desc">持续关注</div>
+                </td>
+            </tr>
+        </table>
+
+        
+    <div class="section">
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <span class="section-title">劳动纠纷</span>
+        </div>
+        <div class="section-body">
+            
+        <div class="data-overview">
+            <table class="overview-table">
+                <tr>
+                <td class="overview-cell">
+                    <div class="overview-value">85</div>
+                    <div class="overview-label">在办案件</div>
+                </td>
+            
+                <td class="overview-cell">
+                    <div class="overview-value">9</div>
+                    <div class="overview-label">活跃案件</div>
+                </td>
+            
+                <td class="overview-cell">
+                    <div class="overview-value">5</div>
+                    <div class="overview-label">涉外案件</div>
+                </td>
+            </tr>
+            </table>
+        </div>
+        
+            <div class="summary-text"><p>本周个案更新已企微汇报。</p><p><strong>其中:</strong></p><p>1. <a href="#case-labor-1">【某员工向某市检察院申请民事监督一案】</a>,本周已收到检察院受理通知(知会主办检察官信息),后续会与生态安全中心保持沟通,重点跟进。</p><p>2. <a href="#case-labor-4">【某员工诉某科技公司(某地)违法解除案】</a>本周开庭,本案为客情变化解除,根据某地地区司法实践可能被认定违法解除,后续将与hr侧沟通和解方案。</p><p style="color: #a3a3a3;">其它案件整体进展平稳。</p></div>
+            <div class="doc-links"><a href="https://doc.weixin.qq.com/doc/w3_AUEACAb8ADwCNkmv9OBoiTDewsoK0?scode=AJEAIQdfAAoRSMMVQIALAA4QZ6ACc" class="doc-link" target="_blank">海外劳动争议详情</a></div>
+            <div class="case-list">
+    <div class="case-card">
+        <div class="case-header">
+            <span class="case-title">⚖️ 【某员工向某市检察院申请民事监督案】</span>
+            <span class="case-badges">
+                
+                <span class="badge badge-primary">
+                    <img src="https://s41.ax1x.com/2026/03/20/pem5wgP.jpg" class="avatar" alt="kevin">kevin
+                </span>
+            </span>
+        </div>
+        <div class="case-body">
+            <div class="case-section">
+                <div class="case-section-title">案件进展</div>
+                <div class="case-section-content"><p style="margin-bottom: 12px;">本周分别以某公司和某控股公司两个公司主体准备好答辩状,预计下周一提交检察院。本周收到检察院寄来的受理通知书,某员工监督申请一案确认由检察官某某、书记员某某负责办理。我们后续会与生态安全中心保持沟通,重点跟进本案。</p></div>
+            </div>
+            <div class="case-section">
+                <div class="case-section-title">后续安排</div>
+                <div class="case-section-content">向检察院询问后续流程及安排,重点应对。</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="case-card">
+        <div class="case-header">
+            <span class="case-title">⚖️ 【某员工诉我司违法解除劳动合同案】</span>
+            <span class="case-badges">
+                
+                <span class="badge badge-primary">
+                    <img src="https://s41.ax1x.com/2026/03/20/pem5wgP.jpg" class="avatar" alt="kevin">kevin
+                </span>
+            </span>
+        </div>
+        <div class="case-body">
+            <div class="case-section">
+                <div class="case-section-title">案件进展</div>
+                <div class="case-section-content"><p style="margin-bottom: 12px;">本周收到对方一审起诉材料及案件开庭通知,对方坚持认为已签两次劳动合同情况下,公司不与其续签属于违法解除,要求支付违法解除劳动合同赔偿金。如前期风险提示,因某地地区已根据某地高院最新指导意见及司法解释二统一裁判规则,员工签订两次固定期限劳动合同后用人单位应当续订无固定期限劳动合同,本案存在一定败诉风险。</p></div>
+            </div>
+            <div class="case-section">
+                <div class="case-section-title">后续安排</div>
+                <div class="case-section-content">准备证据材料争取有利案件结果。</div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <span class="section-number">02</span>
+            <span class="section-title">基建纠纷</span>
+        </div>
+        <div class="section-body">
+            
+        <div class="data-overview">
+            <table class="overview-table">
+                <tr>
+                <td class="overview-cell">
+                    <div class="overview-value">20</div>
+                    <div class="overview-label">在办案件</div>
+                </td>
+            
+                <td class="overview-cell">
+                    <div class="overview-value">0</div>
+                    <div class="overview-label">本周新增</div>
+                </td>
+            
+                <td class="overview-cell">
+                    <div class="overview-value">0</div>
+                    <div class="overview-label">本周结案</div>
+                </td>
+            
+                <td class="overview-cell">
+                    <div class="overview-value">4</div>
+                    <div class="overview-label">结算纠纷</div>
+                </td>
+            
+                <td class="overview-cell">
+                    <div class="overview-value">4</div>
+                    <div class="overview-label">工伤案件</div>
+                </td>
+            
+                <td class="overview-cell">
+                    <div class="overview-value">9</div>
+                    <div class="overview-label">劳务纠纷</div>
+                </td>
+            
+                <td class="overview-cell">
+                    <div class="overview-value">3</div>
+                    <div class="overview-label">保险案件</div>
+                </td>
+            </tr>
+            </table>
+        </div>
+        
+            <div class="summary-text"><p><strong>其中:</strong></p><p>1. <a href="#case-infra-1">【某总包案】</a>,就本案鉴定费用异常问题,经进一步讨论,将投诉重点转向法院技术处、司法局及住建部门在内的多个机构。</p><p>2. <a href="#case-infra-2">【某地04地块争议单项仲裁】</a>,于本周四进行了第二次开庭。</p><p style="color: #a3a3a3;">其它纠纷进展平稳,暂未有高风险事项。</p></div>
+            <div class="doc-links"><a href="https://doc.weixin.qq.com/sheet/e3_AIAAQgZcACojZU0AYcCQJu5FvGPbe?scode=AJEAIQdfAAoK2pdsV7AIAAQgZcACo" class="doc-link" target="_blank">综合诉讼-基建争议汇总表3月更新</a></div>
+            <div class="case-list">
+    <div class="case-card">
+        <div class="case-header">
+            <span class="case-title">⚖️ 【某总包案】</span>
+            <span class="case-badges">
+                
+                <span class="badge badge-primary">
+                    <img src="https://s41.ax1x.com/2026/03/20/pem5wgP.jpg" class="avatar" alt="kevin">kevin、<img src="https://s41.ax1x.com/2026/03/20/pem5sHg.jpg" class="avatar" alt="qimeng">qimeng
+                </span>
+            </span>
+        </div>
+        <div class="case-body">
+            <div class="case-section">
+                <div class="case-section-title">案件进展</div>
+                <div class="case-section-content"><p style="margin-bottom: 12px; padding-left: 16px;">1. 重新鉴定:法官助理反馈,因前任助理离职,现任人员对鉴定费用事宜并不清楚。但承办法官近期可能要求各方补充材料,具体要求尚未正式下发。</p><p style="margin-bottom: 12px; padding-left: 16px;">2. 资料梳理:本周继续进行签证索赔梳理。</p><p style="margin-bottom: 12px; padding-left: 16px;">3. 其他:针对鉴定机构本身与我司还存在合作的情况,为避免对案件产生潜在不利影响,已通知业务侧在不惊动对方的情况下暂停使用该机构。</p></div>
+            </div>
+            <div class="case-section">
+                <div class="case-section-title">后续安排</div>
+                <div class="case-section-content">下周提交投诉材料,将要求各受理投诉的机构,在接到投诉后定期向我们反馈处理进展,并在处理完毕后提供书面结论。</div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <span class="section-number">03</span>
+            <span class="section-title">竞业限制</span>
+        </div>
+        <div class="section-body">
+            
+        <div class="data-overview">
+            <table class="overview-table">
+                <tr>
+                <td class="overview-cell">
+                    <div class="overview-value">65</div>
+                    <div class="overview-label">竞业期内人员</div>
+                </td>
+            
+                <td class="overview-cell">
+                    <div class="overview-value">14</div>
+                    <div class="overview-label">在诉案件</div>
+                </td>
+            
+                <td class="overview-cell">
+                    <div class="overview-value">40</div>
+                    <div class="overview-label">调查取证</div>
+                </td>
+            </tr>
+            </table>
+        </div>
+        
+            
+            <div class="doc-links"><a href="https://doc.weixin.qq.com/sheet/e3_AL4AgAaBACcdYDyiu5FQ3Gcy28GlW?scode=AJEAIQdfAAoHdoFEvUAMUA5waQACc&tab=BB08J2" class="doc-link" target="_blank">竞业主诉与调查概况 3月更新</a></div>
+            <div class="case-list">
+    <div class="case-card">
+        <div class="case-header">
+            <span class="case-title">⚖️ TEG某员工违约入职某互联网公司案(与chonya)</span>
+            <span class="case-badges">
+                <span class="badge badge-status">新收裁决</span>
+                <span class="badge badge-primary">
+                    <img src="https://s41.ax1x.com/2026/03/20/pem50jf.jpg" class="avatar" alt="mark">mark
+                </span>
+            </span>
+        </div>
+        <div class="case-body">
+            <div class="case-section">
+                <div class="case-section-title">案件进展</div>
+                <div class="case-section-content"><p style="margin-bottom: 12px;">本周正式收到裁决书,仲裁员全额支持24个月违约金,裁决说理围绕员工未履行反馈就业义务,且在我方提供初步证据情况下,员工并未提出实质反驳证据,据此,达成高度盖然性的标准。预计员工将提起一审,据了解某互联网公司方的和解预期在12个月左右,结合业务预期,一审阶段如按照指引标准(15个月)有望达成和解。</p></div>
+            </div>
+            <div class="case-section">
+                <div class="case-section-title">后续安排</div>
+                <div class="case-section-content">预计员工将提起一审,了解和解预期。</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="case-card">
+        <div class="case-header">
+            <span class="case-title">⚖️ TEG某员工违约入职某互联网公司案</span>
+            <span class="case-badges">
+                <span class="badge badge-status">新增案件</span>
+                <span class="badge badge-primary">
+                    <img src="https://s41.ax1x.com/2026/03/20/pem50jf.jpg" class="avatar" alt="mark">mark
+                </span>
+            </span>
+        </div>
+        <div class="case-body">
+            <div class="case-section">
+                <div class="case-section-title">案件进展</div>
+                <div class="case-section-content"><p style="margin-bottom: 12px;">本周已正式立案,立案材料先围绕其拒绝反馈就业去向,且我司收到了举报邮件。拟庭审期间推动现场核查其社保信息,预计本案某互联网公司方应不做共担,将视开庭情况评估是否可和解关闭案件。</p></div>
+            </div>
+            <div class="case-section">
+                <div class="case-section-title">后续安排</div>
+                <div class="case-section-content">视开庭情况评估是否可和解关闭案件。</div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <span class="section-number">04</span>
+            <span class="section-title">其他事项</span>
+        </div>
+        <div class="section-body">
+            
+            
+            
+            <div class="case-list">
+    <div class="case-card">
+        <div class="case-header">
+            <span class="case-title">⚖️ 【某地海关扣押腾讯采购防火墙刑事处罚事宜】</span>
+            <span class="case-badges">
+                
+                <span class="badge badge-primary">
+                    <img src="https://s41.ax1x.com/2026/03/20/pem5sHg.jpg" class="avatar" alt="qimeng">qimeng、<img src="https://s41.ax1x.com/2026/03/20/pem5rDS.jpg" class="avatar" alt="chonya">chonya
+                </span>
+            </span>
+        </div>
+        <div class="case-body">
+            <div class="case-section">
+                <div class="case-section-title">案件进展</div>
+                <div class="case-section-content"><p style="margin-bottom: 12px;">业务团队已拟定某公司A与某公司B双方的《终止协议》,对采购订单解除、相关损失分担、合同终止后某公司B方仍需履行的责任义务等核心事项作出明确约定;法平团队进行了审核,但鉴于本案涉及某地海关调查程序,协议中部分条款需由诉讼条线进行法律审查与确认。</p></div>
+            </div>
+            <div class="case-section">
+                <div class="case-section-title">后续安排</div>
+                <div class="case-section-content">针对协议待审核条款,出具诉讼专业意见并完成反馈。</div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+
+
+        <!-- Document Links -->
+        <div class="section" style="background: #fafafa;">
+            <div class="section-body">
+                <div style="font-size: 12px; color: #737373; margin-bottom: 12px;">相关文档</div>
+                <a href="https://doc.weixin.qq.com/sheet/e3_ALAA4QZ6ACcCNnER3CoZxTtOXzrog?scode=AJEAIQdfAAoc3m7F7LAIAAQgZcACo" class="doc-link" target="_blank">综合中心个人在办案件表格</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-author">
+                <div class="footer-name">Dylan Bai (白杰)</div>
+                <div class="footer-title">腾讯公司 法务综合部 综合诉讼维权中心</div>
+            </div>
+            <div class="footer-notice">
+                <strong>Notice:</strong> 本邮件(包括附件及其批注)可能涉及公司秘密,未经相关人同意请勿直接对外转发、原文复制摘录对外传播或采取其他方式对外分享。感谢!
+            </div>
+        </div>
+    </div>
+</body>
+</html>

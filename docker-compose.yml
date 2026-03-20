@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  weekly-report:
+    build: .
+    image: weekly-report-generator:latest
+    container_name: weekly-report
+    ports:
+      - "8501:8501"
+    volumes:
+      # 持久化数据目录，保存自动保存的文件
+      - ./data:/app/data
+    environment:
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

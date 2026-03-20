@@ -1,0 +1,154 @@
+{
+  "start_date": "2026-03-16",
+  "end_date": "2026-03-22",
+  "total_cases": 124,
+  "new_cases": 1,
+  "closed_cases": 0,
+  "foreign_cases": 5,
+  "sections": {
+    "labor": {
+      "overview": {
+        "涉外案件": 5,
+        "国内案件": 80,
+        "活跃案件": 9,
+        "在办案件": 85
+      },
+      "summary": "陈明星向深圳市检察院申请民事监督一案|",
+      "doc_links": [
+        {
+          "name": "海外劳动纠纷整体详情",
+          "url": "https://doc.weixin.qq.com/doc/w3_AUEACAb8ADwCNkmv9OBoiTDewsoK0?scode=AJEAIQdfAAoRSMMVQIALAA4QZ6ACc"
+        }
+      ],
+      "cases": [
+        {
+          "title": "陈明星向深圳市检察院申请民事监督案",
+          "progress": "",
+          "follow_up": "",
+          "owners": "",
+          "status": ""
+        }
+      ],
+      "highlight_cases": [
+        {
+          "name": "陈明星向深圳市检察院申请民事监督一案",
+          "progress": ""
+        }
+      ]
+    },
+    "infrastructure": {
+      "overview": {
+        "在办案件": 20,
+        "本周新增": 0,
+        "本周结案": 0,
+        "结算纠纷": 4,
+        "工伤案件": 4,
+        "劳务纠纷": 9,
+        "保险案件": 3
+      },
+      "summary": "",
+      "doc_links": [
+        {
+          "name": "综合诉讼-基建争议汇总表",
+          "url": "https://doc.weixin.qq.com/sheet/e3_AIAAQgZcACojZU0AYcCQJu5FvGPbe?scode=AJEAIQdfAAoK2pdsV7AIAAQgZcACo"
+        },
+        {
+          "name": "基建重点案件情况梳理",
+          "url": "https://doc.weixin.qq.com/doc/w3_AIAAQgZcACosOZ914YfTJWJ1iHHT0?scode=AJEAIQdfAAol57yC7xALAA4QZ6ACc"
+        }
+      ],
+      "cases": [
+        {
+          "title": "",
+          "progress": "",
+          "follow_up": "",
+          "owners": "",
+          "status": ""
+        }
+      ],
+      "highlight_cases": [
+        {
+          "name": "",
+          "progress": ""
+        }
+      ]
+    },
+    "non_compete": {
+      "overview": {
+        "竞业期内人员": 65,
+        "在诉案件": 14,
+        "调查取证": 40,
+        "新增主诉": 1,
+        "近期待诉": 8,
+        "被诉支持": 8,
+        "在诉_TEG": 9,
+        "在诉_CDG": 1,
+        "在诉_IEG": 3,
+        "在诉_CSIG": 1,
+        "在诉_WXG": 0,
+        "在诉_S1": 0,
+        "在诉_PCG": 0,
+        "调查_TEG": 18,
+        "调查_CDG": 8,
+        "调查_IEG": 3,
+        "调查_CSIG": 8,
+        "调查_WXG": 2,
+        "调查_S1": 1,
+        "调查_PCG": 0
+      },
+      "summary": "",
+      "doc_links": [
+        {
+          "name": "竞业限制案件整体情况",
+          "url": "https://doc.weixin.qq.com/sheet/e3_AL4AgAaBACcdYDyiu5FQ3Gcy28GlW?scode=AJEAIQdfAAoHdoFEvUAMUA5waQACc&tab=BB08J2"
+        }
+      ],
+      "cases": [
+        {
+          "title": "",
+          "progress": "",
+          "follow_up": "",
+          "owners": "",
+          "status": ""
+        }
+      ],
+      "highlight_cases": [
+        {
+          "name": "",
+          "progress": ""
+        }
+      ]
+    },
+    "other": {
+      "overview": {},
+      "summary": "",
+      "doc_links": [],
+      "cases": [
+        {
+          "title": "",
+          "progress": "",
+          "follow_up": "",
+          "owners": "",
+          "status": ""
+        }
+      ],
+      "highlight_cases": [
+        {
+          "name": "",
+          "progress": ""
+        }
+      ]
+    }
+  },
+  "global_doc_links": [
+    {
+      "name": "综合中心个人在办案件表格",
+      "url": "https://doc.weixin.qq.com/sheet/e3_ALAA4QZ6ACcCNnER3CoZxTtOXzrog?scode=AJEAIQdfAAoc3m7F7LAIAAQgZcACo"
+    }
+  ],
+  "author": {
+    "name": "Dylan Bai (白杰)",
+    "title": "腾讯公司 法务综合部 综合诉讼维权中心"
+  },
+  "notice": "本邮件(包括附件及其批注)可能涉及公司秘密,未经相关人同意请勿直接对外转发、原文复制摘录对外传播或采取其他方式对外分享。感谢!"
+}
