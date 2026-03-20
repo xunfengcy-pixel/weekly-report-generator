@@ -27,49 +27,39 @@ jobs:
     
     - name: Create app bundle
       run: |
-        APP_NAME="周报生成器"
-        APP_DIR="dist/${APP_NAME}.app"
+        mkdir -p "dist/周报生成器.app/Contents/MacOS"
+        mkdir -p "dist/周报生成器.app/Contents/Resources"
+        cp dist/weekly-report "dist/周报生成器.app/Contents/MacOS/周报生成器"
+        chmod +x "dist/周报生成器.app/Contents/MacOS/周报生成器"
         
-        # 创建目录结构
-        mkdir -p "${APP_DIR}/Contents/MacOS"
-        mkdir -p "${APP_DIR}/Contents/Resources"
+        printf '%s\n' '<?xml version="1.0" encoding="UTF-8"?>' > "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '<plist version="1.0">' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '<dict>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <key>CFBundleDevelopmentRegion</key>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <string>zh_CN</string>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <key>CFBundleExecutable</key>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <string>周报生成器</string>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <key>CFBundleIdentifier</key>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <string>com.weeklyreport.generator</string>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <key>CFBundleInfoDictionaryVersion</key>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <string>6.0</string>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <key>CFBundleName</key>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <string>周报生成器</string>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <key>CFBundlePackageType</key>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <string>APPL</string>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <key>CFBundleShortVersionString</key>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <string>1.0</string>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <key>CFBundleVersion</key>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <string>1</string>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <key>LSMinimumSystemVersion</key>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <string>10.13</string>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <key>NSHighResolutionCapable</key>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '    <true/>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '</dict>' >> "dist/周报生成器.app/Contents/Info.plist"
+        printf '%s\n' '</plist>' >> "dist/周报生成器.app/Contents/Info.plist"
         
-        # 复制可执行文件
-        cp dist/weekly-report "${APP_DIR}/Contents/MacOS/${APP_NAME}"
-        chmod +x "${APP_DIR}/Contents/MacOS/${APP_NAME}"
-        
-        # 创建 Info.plist
-        cat > "${APP_DIR}/Contents/Info.plist" << 'PLIST_EOF'
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>CFBundleDevelopmentRegion</key>
-    <string>zh_CN</string>
-    <key>CFBundleExecutable</key>
-    <string>周报生成器</string>
-    <key>CFBundleIdentifier</key>
-    <string>com.weeklyreport.generator</string>
-    <key>CFBundleInfoDictionaryVersion</key>
-    <string>6.0</string>
-    <key>CFBundleName</key>
-    <string>周报生成器</string>
-    <key>CFBundlePackageType</key>
-    <string>APPL</string>
-    <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
-    <key>CFBundleVersion</key>
-    <string>1</string>
-    <key>LSMinimumSystemVersion</key>
-    <string>10.13</string>
-    <key>NSHighResolutionCapable</key>
-    <true/>
-</dict>
-</plist>
-PLIST_EOF
-        
-        # 显示结果
-        ls -la "${APP_DIR}/Contents/MacOS/"
+        ls -la "dist/周报生成器.app/Contents/MacOS/"
     
     - name: Zip app bundle
       run: |
