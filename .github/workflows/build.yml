@@ -25,45 +25,12 @@ jobs:
       run: |
         pyinstaller --onefile --name "weekly-report" --add-data "app.py:." --add-data "config.py:." --add-data "template.html:." run_app.py
     
-    - name: Create app bundle
+    - name: Check dist folder
       run: |
-        mkdir -p "dist/周报生成器.app/Contents/MacOS"
-        mkdir -p "dist/周报生成器.app/Contents/Resources"
-        cp dist/weekly-report "dist/周报生成器.app/Contents/MacOS/周报生成器"
-        echo '<?xml version="1.0" encoding="UTF-8"?>
-        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-        <plist version="1.0">
-        <dict>
-            <key>CFBundleDevelopmentRegion</key>
-            <string>zh_CN</string>
-            <key>CFBundleExecutable</key>
-            <string>周报生成器</string>
-            <key>CFBundleIdentifier</key>
-            <string>com.weeklyreport.generator</string>
-            <key>CFBundleInfoDictionaryVersion</key>
-            <string>6.0</string>
-            <key>CFBundleName</key>
-            <string>周报生成器</string>
-            <key>CFBundlePackageType</key>
-            <string>APPL</string>
-            <key>CFBundleShortVersionString</key>
-            <string>1.0</string>
-            <key>CFBundleVersion</key>
-            <string>1</string>
-            <key>LSMinimumSystemVersion</key>
-            <string>10.13</string>
-            <key>NSHighResolutionCapable</key>
-            <true/>
-        </dict>
-        </plist>' > "dist/周报生成器.app/Contents/Info.plist"
+        ls -la dist/
     
-    - name: Zip app bundle
-      run: |
-        cd dist
-        zip -r ../weekly-report-macos.zip 周报生成器.app
-    
-    - name: Upload artifact
+    - name: Upload executable
       uses: actions/upload-artifact@v4
       with:
         name: weekly-report-macos
-        path: weekly-report-macos.zip
+        path: dist/weekly-report
