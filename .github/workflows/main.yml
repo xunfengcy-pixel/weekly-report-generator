@@ -1,0 +1,62 @@
+name: Build Executables
+
+on:
+  push:
+    branches: [ main, master ]
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller streamlit
+    
+    - name: Build executable
+      run: |
+        pyinstaller --onefile --name "周报生成器" --add-data "app.py:." --add-data "config.py:." --add-data "template.html:." run_app.py
+    
+    - name: Create app bundle
+      run: |
+        mkdir -p "dist/周报生成器.app/Contents/MacOS"
+        cp dist/周报生成器 "dist/周报生成器.app/Contents/MacOS/"
+        cat > "dist/周报生成器.app/Contents/Info.plist" << 'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleExecutable</key>
+    <string>周报生成器</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.weeklyreport.generator</string>
+    <key>CFBundleName</key>
+    <string>周报生成器</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+</dict>
+</plist>
+EOF
+    
+    - name: Zip app bundle
+      run: |
+        cd dist
+        zip -r ../周报生成器-macOS.zip 周报生成器.app
+    
+    - name: Upload to Releases
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/v')
+      with:
+        files: 周报生成器-macOS.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
